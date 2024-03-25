@@ -1,0 +1,101 @@
+{extends file="../templates/main.html"}
+
+
+{block name=content}
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Kalkulator</h1>
+									</header>
+
+									<!-- Elements -->
+										<h2 id="elements">Wprowadź dane:</h2>
+										<div class="row gtr-200">
+											<div class="col-6 col-12-medium">
+
+												<!-- Form -->
+
+													<div class="col-6 col-12-small">
+
+
+													<!--  <form method="post" action="{$app_url}/app/kalkulatorZwykly.php" class="pure-form pure-form-stacked">-->
+													<form method="post" class="pure-form pure-form-stacked">
+														<div class="row gtr-uniform">
+															<div class="col-6 col-12-xsmall">
+																<label for="wartosc1">Pierwsza liczba</label>
+																	<input id="wartosc1" type="text" placeholder="Podaj liczbę" name="wartosc1" value="{$form['wartosc1']}">
+															</div>
+															<div class="col-6 col-12-xsmall">
+																<label for="wartosc2">Druga liczba</label>
+																	<input id="wartosc2" type="text" placeholder="Podaj liczbę" name="wartosc2" value="{$form['wartosc2']}">
+															</div>
+															<!-- Break -->
+															<div class="col-12">
+																<select id="operacja" name="operacja">
+																{if isset($form['op_name'])}
+																<option value="{$form['op']}">ponownie: {$form['op_name']}</option>
+																<option value="" disabled="true">---</option>
+																{/if}
+																	<option value="">- Działanie -</option>
+																	<option value="plus">+</option>
+																	<option value="minus">-</option>
+																	<option value="times">*</option>
+																	<option value="div">/</option>
+																</select>
+															</div>
+															
+															
+															<!-- Break -->
+															<div class="col-12">
+																<ul class="actions">
+																	<li><input type="submit" value="Oblicz" class="primary" /></li>
+																	
+																</ul>
+															</div>
+														</div>
+													</form>
+										
+												
+											<div class="l-box-lrg pure-u-1 pure-u-med-3-5">
+
+															{* wyświeltenie listy błędów, jeśli istnieją *}
+															{if isset($messages)}
+																{if count($messages) > 0} 
+																	<h4>Wystąpiły błędy: </h4>
+																	<ol class="err">
+																	{foreach  $messages as $msg}
+																	{strip}
+																		<li>{$msg}</li>
+																	{/strip}
+																	{/foreach}
+																	</ol>
+																{/if}
+															{/if}
+															
+															{* wyświeltenie listy informacji, jeśli istnieją *}
+															{if isset($infos)}
+																{if count($infos) > 0} 
+																	<h4>Informacje: </h4>
+																	<ol class="inf">
+																	{foreach  $infos as $msg}
+																	{strip}
+																		<li>{$msg}</li>
+																	{/strip}
+																	{/foreach}
+																	</ol>
+																{/if}
+															{/if}
+															
+															{if isset($result)}
+																<h4>Wynik</h4>
+																<p class="res">
+																{$result}
+																</p>
+															{/if}
+															
+															</div>	
+														{/block}

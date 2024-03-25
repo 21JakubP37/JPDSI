@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>{$page_title|default:"Tytuł domyślny"}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{$app_url}/assets/css/main.css" />
+		
+		<noscript><link rel="stylesheet" href="{$app_url}/assets/css/noscript.css" /></noscript>
+
+		
+	</head>
+	<body class="is-preload">
+
+		
+				<!-- Header -->
+				<div class="header">
+					<header id="header" class="alt">
+						<a href="{$app_url}/app/kalkulatorZwykly.php" class="logo"><strong>Świat</strong> <span>Kalkulatorów</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="{$app_url}/app/kalkulatorKredytowy.php">Kalkulator Kredytowy</a></li>
+							<li><a href="{$app_url}/app/kalkulatorZwykly.php">Kalkulator</a></li>
+						</ul>
+						<ul class="actions stacked">
+							
+							<!--<li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+				</div>
+				
+			<div class="content">
+				{block name=content} Domyślna treść zawartości .... {/block}
+			</div><!-- content -->
+				
+
+				<!-- Footer -->
+				<div class="footer">
+					{block name=footer}
+						<footer id="footer">
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								
+							</div>
+						</footer>
+					{/block}
+				</div>
+		
+		<!-- Scripts -->
+			<script src="{$app_url}/assets/js/jquery.min.js"></script>
+			<script src="{$app_url}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="{$app_url}/assets/js/jquery.scrollex.min.js"></script>
+			<script src="{$app_url}/assets/js/browser.min.js"></script>
+			<script src="{$app_url}/assets/js/breakpoints.min.js"></script>
+			<script src="{$app_url}/assets/js/util.js"></script>
+			<script src="{$app_url}/assets/js/main.js"></script>
+
+
+	</body>
+</html>

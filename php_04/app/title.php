@@ -1,0 +1,15 @@
+<?php
+// KONTROLER stronwartosc2 kalkulatora
+require_once dirname(__FILE__).'/../config.php';
+//załaduj smarty
+require_once $conf->root_path.'/libs/Smarty.class.php';
+
+$smarty = new smarty();
+$smarty->assign('conf',$conf);
+$smarty->assign('app_url',$conf->app_url);
+$smarty->assign('root_path',$conf->root_path);
+$smarty->assign('page_title','Kalkulator');
+$smarty->assign('page_description','Profesjonalne szablonowanie oparte na bibliotece smarty');
+$smarty->assign('page_header','Szablony smarty');
+
+$smarty->display($conf->root_path.'/app/title.html');

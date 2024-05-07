@@ -1,0 +1,82 @@
+{extends file="main.html"}
+
+{block name=content}
+<!-- Main -->
+<div id="main" class="alt">
+
+	<!-- One -->
+	<section id="one">
+		<div class="inner">
+			<header class="major">
+				<h1>Kalkulator</h1>
+			</header>
+
+			<!-- Elements -->
+			<h2 id="elements">Wprowadź dane:</h2>
+			<div class="row gtr-200">
+				<div class="col-6 col-12-medium">
+
+					<!-- Form -->
+
+					<div class="col-6 col-12-small">
+
+
+						<form class="pure-form pure-form-stacked" action="{$conf->action_root}kalkulatorZwykly" method="post">
+							<div class="row gtr-uniform">
+								<div class="col-6 col-12-xsmall">
+									<label for="x">Pierwsza liczba</label> <input id="x"
+										type="text" placeholder="Podaj liczbę" name="x"
+										value="{$form->x}">
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<label for="y">Druga liczba</label> <input id="y" type="text"
+										placeholder="Podaj liczbę" name="y" value="{$form->y}">
+								</div>
+								<!-- Break -->
+								<div class="col-12">
+									<select id="op" name="op"> {if isset($res->op_name)}
+										<option value="" disabled="true">---</option> {/if}
+										<option value="">- Działanie -</option>
+										<option value="plus">+</option>
+										<option value="minus">-</option>
+										<option value="times">*</option>
+										<option value="div">/</option>
+									</select>
+								</div>
+
+
+								<!-- Break -->
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Oblicz" class="primary" /></li>
+
+									</ul>
+								</div>
+							</div>
+						</form>
+
+
+						<div class="l-box-lrg pure-u-1 pure-u-med-3-5">
+
+							{* wyświeltenie listy błędów, jeśli istnieją *} {if
+							$msgs->isError()}
+							<h4>Wystąpiły błędy:</h4>
+							<ol class="err">
+								{foreach $msgs->getErrors() as $err} {strip}
+								<li>{$err}</li> {/strip} {/foreach}
+							</ol>
+							{/if} {* wyświeltenie listy informacji, jeśli istnieją *} {if
+							$msgs->isInfo()}
+							<h4>Informacje:</h4>
+							<ol class="inf">
+								{foreach $msgs->getInfos() as $inf} {strip}
+								<li>{$inf}</li> {/strip} {/foreach}
+							</ol>
+							{/if} {if isset($res->result)}
+							<h4>Wynik</h4>
+							<p class="res">{$res->result}</p>
+							{/if}
+
+						</div>
+
+						{/block}

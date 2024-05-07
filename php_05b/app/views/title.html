@@ -1,0 +1,85 @@
+
+{extends file="main.html"}
+
+
+
+{block name=footer}<footer id="footer">
+							<div class="inner align-center">
+							<h3>Niedziałające linki do nieistniejących social mediów:</h3>
+								<ul class="icons">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								
+							</div>
+						</footer>{/block}
+
+
+{block name=content}
+<!-- Banner -->
+
+<section id="banner" class="major align-center">
+	<div class="inner">
+		<header class="major row > .off-1">
+			<h1>Witamy w świecie kalkulatorów</h1>
+		</header>
+		<div class="content row > .off-1">
+			<p>
+				
+			</p>
+			<ul class="actions">
+				<li><a href="#one" class="button next scrolly">Get Started</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Main -->
+<div id="main">
+
+	<!--  One -->
+	<section id="one" class="tiles">
+		<article>
+			<span class="image"> <img src="images/pic01.jpg" alt="" />
+			</span>
+			<header class="major">
+				<h3>
+					<a href="{$conf->action_root}kalkulatorZwykly" class="link">Kalkulator
+						Zwykły</a>
+				</h3>
+				<p>Dobry, jeśli nie potrafisz liczyć</p>
+			</header>
+		</article>
+		<article>
+			<span class="image"> <img src="images/pic02.jpg" alt="" />
+			</span>
+			<header class="major">
+				<h3>
+					<a href="{$conf->action_root}kalkulatorKredytowy" class="link">Kalkulator
+						Kredytowy</a>
+				</h3>
+				<p>I tak go nie spłacisz</p>
+			</header>
+		</article>
+
+	</section>
+
+	<!-- 						Two -->
+	<section id="two">
+		<div class="inner">
+			<header class="major">
+				<h2>Dlaczego powinieneś wybrać nas?</h2>
+			</header>
+			<p>A czemu by nie?</p>
+
+		</div>
+	</section>
+
+</div>
+
+
+{/block}
+
